@@ -85,9 +85,9 @@
         </nav>
 
         <!-- Contenido Principal -->
-    <div class="container mt-5">
-        <h1 id="welcomeMessage" class="text-center"></h1>
-    </div>
+        <div class="container mt-5">
+            <h1 id="welcomeMessage" class="text-center mb-4"></h1>
+        </div>
 
         <!-- Carrusel -->
         <div id="backgroundCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="20000">
@@ -215,6 +215,11 @@
         </div>
     </div>
 </section>
+
+<!-- Contenido Principal -->
+<div class="container mt-5">
+    <h1 id="welcomeMessage" class="text-center"></h1>
+</div>
 
 <!-- Modal de Suscripción para el Plan Básico -->
 <div class="modal fade" id="suscribirseModalBásico" tabindex="-1" aria-labelledby="suscribirseModalBásicoLabel" aria-hidden="true">
@@ -388,29 +393,67 @@
         <script>
             // Obtener usuario autenticado
             const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-    
+        
             // Elementos de la página
             const loginBtn = document.getElementById('loginBtn');
             const registerBtn = document.getElementById('registerBtn');
             const logoutBtn = document.getElementById('logoutBtn');
             const logoutLink = document.getElementById('logoutLink');
-    
-            if (loggedInUser) {
-                // Si el usuario está logueado, ocultar los botones de login/registro y mostrar el de logout
-                loginBtn.style.display = 'none';
-                registerBtn.style.display = 'none';
-                logoutBtn.style.display = 'block';
-            } else {
-                // Si no hay usuario logueado, mostrar los botones de login/registro
-                loginBtn.style.display = 'block';
-                registerBtn.style.display = 'block';
-                logoutBtn.style.display = 'none';
+            const welcomeMessage = document.getElementById('welcomeMessage');
+        
+            // Función para actualizar la interfaz según el estado de autenticación
+            function updateUI() {
+                const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+                
+                if (loggedInUser) {
+                    // Si el usuario está logueado
+                    loginBtn.style.display = 'none';
+                    registerBtn.style.display = 'none';
+                    logoutBtn.style.display = 'block';
+                    welcomeMessage.textContent = `¡Bienvenido/a ${loggedInUser.name}!`;
+                } else {
+                    // Si no hay usuario logueado
+                    loginBtn.style.display = 'block';
+                    registerBtn.style.display = 'block';
+                    logoutBtn.style.display = 'none';
+                    welcomeMessage.textContent = '';
+                }
             }
-    
-            // Cerrar sesión
-            logoutLink.addEventListener('click', function () {
+        
+            // Actualizar UI al cargar la página
+            updateUI();
+        
+            // Manejar Inicio de Sesión
+            document.getElementById('loginForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+        
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                const users = JSON.parse(localStorage.getItem('users')) || [];
+        
+                const user = users.find(user => user.username === username && user.password === password);
+        
+                if (user) {
+                    // Guardar usuario en localStorage
+                    localStorage.setItem('loggedInUser', JSON.stringify(user));
+                    
+                    // Actualizar UI
+                    updateUI();
+        
+                    // Cerrar el modal
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+                    modal.hide();
+                } else {
+                    alert('Usuario o contraseña incorrectos.');
+                }
+            });
+        
+            // Manejar Cerrar Sesión
+            logoutLink.addEventListener('click', function (e) {
+                e.preventDefault();
                 localStorage.removeItem('loggedInUser');
-                window.location.href = "index.html"; // Redirigir al inicio después de cerrar sesión
+                updateUI();
+                window.location.reload();
             });
         </script>
     
