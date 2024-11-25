@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes de Suscripción - CleanHome</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="StylePlan.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">CleanHome</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#productos">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#beneficios">Beneficios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-glow" href="login.html">Iniciar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Encabezado -->
+        <section class="hero-section text-center py-5">
+            <div class="container">
+                <h1 class="display-4 mb-4">Elige el Plan Perfecto para Ti</h1>
+                <p class="lead mb-5">Descubre nuestras opciones de suscripción y encuentra la que mejor se adapte a tus necesidades</p>
+            </div>
+        </section>
+
+        <!-- Planes de Suscripción -->
+        <section class="planes py-5" id="planes">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <!-- Plan Básico -->
+                    <div class="col-md-4 mb-4" data-aos="fade-up">
+                        <div class="card card-plan">
+                            <div class="card-body">
+                                <h3>Plan Básico</h3>
+                                <div class="precio">
+                                    <span class="monto">$29.99</span>
+                                    <span class="periodo">/mes</span>
+                                </div>
+                                <ul class="lista-beneficios">
+                                    <li>Kit básico de limpieza mensual</li>
+                                    <li>4 productos esenciales</li>
+                                    <li>Envío estándar incluido</li>
+                                    <li>Soporte por correo</li>
+                                    <li>Guía básica de uso</li>
+                                </ul>
+                                <button class="btn btn-glow w-100">Seleccionar Plan</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Plan Premium -->
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card card-plan destacado">
+                            <div class="badge-destacado">Más Popular</div>
+                            <div class="card-body">
+                                <h3>Plan Premium</h3>
+                                <div class="precio">
+                                    <span class="monto">$49.99</span>
+                                    <span class="periodo">/mes</span>
+                                </div>
+                                <ul class="lista-beneficios">
+                                    <li>Kit premium de limpieza mensual</li>
+                                    <li>7 productos especializados</li>
+                                    <li>Envío rápido gratuito</li>
+                                    <li>Soporte prioritario 24/7</li>
+                                    <li>Guía detallada + videos tutoriales</li>
+                                    <li>Productos personalizables</li>
+                                </ul>
+                                <button class="btn btn-glow w-100">Seleccionar Plan</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Plan Empresarial -->
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card card-plan">
+                            <div class="card-body">
+                                <h3>Plan Empresarial</h3>
+                                <div class="precio">
+                                    <span class="monto">$79.99</span>
+                                    <span class="periodo">/mes</span>
+                                </div>
+                                <ul class="lista-beneficios">
+                                    <li>Kit completo de limpieza mensual</li>
+                                    <li>10+ productos profesionales</li>
+                                    <li>Envío express prioritario</li>
+                                    <li>Soporte VIP 24/7</li>
+                                    <li>Capacitación personalizada</li>
+                                    <li>Productos a medida</li>
+                                    <li>Descuentos por volumen</li>
+                                </ul>
+                                <button class="btn btn-glow w-100">Contactar Ventas</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Productos Incluidos -->
+        <section class="productos py-5" id="productos">
+            <div class="container">
+                <h2 class="text-center mb-5">Productos Incluidos en Cada Plan</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4" data-aos="fade-up">
+                        <div class="producto-card">
+                            <img src="/api/placeholder/300/200" alt="Productos Básicos" class="img-fluid mb-3">
+                            <h4>Kit Básico</h4>
+                            <ul class="lista-productos">
+                                <li>Limpiador multiusos</li>
+                                <li>Desinfectante</li>
+                                <li>Limpiador de vidrios</li>
+                                <li>Paños de microfibra</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="producto-card">
+                            <img src="/api/placeholder/300/200" alt="Productos Premium" class="img-fluid mb-3">
+                            <h4>Kit Premium</h4>
+                            <ul class="lista-productos">
+                                <li>Todo del kit básico +</li>
+                                <li>Limpiador de madera</li>
+                                <li>Quitamanchas especializado</li>
+                                <li>Ambientador premium</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="producto-card">
+                            <img src="/api/placeholder/300/200" alt="Productos Empresariales" class="img-fluid mb-3">
+                            <h4>Kit Empresarial</h4>
+                            <ul class="lista-productos">
+                                <li>Todo del kit premium +</li>
+                                <li>Productos industriales</li>
+                                <li>Equipamiento profesional</li>
+                                <li>Soluciones a medida</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beneficios -->
+        <section class="beneficios py-5 bg-light" id="beneficios">
+            <div class="container">
+                <h2 class="text-center mb-5">Beneficios de Suscripción</h2>
+                <div class="row">
+                    <div class="col-md-3 mb-4" data-aos="fade-up">
+                        <div class="beneficio-card">
+                            <div class="icono mb-3">🚚</div>
+                            <h4>Envío Gratuito</h4>
+                            <p>Recibe tus productos directamente en tu puerta sin costo adicional</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="beneficio-card">
+                            <div class="icono mb-3">🔄</div>
+                            <h4>Flexibilidad</h4>
+                            <p>Cambia o pausa tu suscripción cuando lo necesites</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="beneficio-card">
+                            <div class="icono mb-3">💰</div>
+                            <h4>Ahorro</h4>
+                            <p>Precios especiales exclusivos para suscriptores</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="beneficio-card">
+                            <div class="icono mb-3">🎁</div>
+                            <h4>Regalos Sorpresa</h4>
+                            <p>Productos adicionales de regalo cada mes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <h5>CleanHome</h5>
+                        <p>Tu solución integral para la limpieza del hogar</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5>Contacto</h5>
+                        <p>Email: info@cleanhome.com<br>Tel: (123) 456-7890</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5>Enlaces Rápidos</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">Términos y Condiciones</a></li>
+                            <li><a href="#" class="text-white">Política de Privacidad</a></li>
+                            <li><a href="#" class="text-white">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>

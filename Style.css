@@ -1,0 +1,376 @@
+/* Variables de colores */
+:root {
+    --green-uts: #f5e3d3; /* Fondo claro */
+    --green-uts-dark: #61452b; /* Texto oscuro */
+    --gray-uts: rgba(255, 255, 255, 0.9);
+    --hover-color: #d4a373; /* Más contraste */
+    --text-shadow: 1px 1px 3px #61452b;
+}
+
+/* Mejoras de accesibilidad visual */
+body {
+    font-size: 18px; /* Aumentado para mejor legibilidad */
+    line-height: 1.6;
+}
+
+/* Mejoras generales */
+.main-container {
+    min-height: 100vh; /* Cambiado de height a min-height */
+    display: flex;
+    flex-direction: column;
+    overflow: auto; /* Cambiado a auto */
+    background-color: #000;
+}
+
+
+/* Navbar mejorado */
+.navbar {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 1.2rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    color: var(--gray-uts);
+    font-size: 1.5rem; /* Tamaño claro y mayor contraste */
+}
+
+.navbar-brand::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.navbar-brand:hover::before {
+    left: 100%;
+}
+
+.nav-item .nav-link {
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+    color: #fff;
+    padding: 0.5rem 1rem; /* Añade espaciado para mayor tamaño y alineación */
+    display: flex;
+    align-items: center; /* Alineación vertical centrada */
+    transition: color 0.3s ease;
+}
+
+.nav-item .nav-link:hover {
+    color: var(--hover-color);
+    text-decoration: underline; /* Mejora accesibilidad visual */}
+
+.navbar-nav .nav-item .nav-link, .navbar-nav .btn-glow {
+    margin-left: 0.5rem; /* Espaciado para separación */
+    margin-right: 0.5rem;
+}
+
+/* Mejoras en enlaces accesibles */
+.nav-item .nav-link:focus, .btn-glow:focus {
+    outline: 2px solid var(--hover-color); /* Resaltado visible */
+    outline-offset: 2px;
+}
+
+/* Botones mejorados */
+.btn-glow {
+    background: linear-gradient(45deg, var(--green-uts-dark), var(--green-uts));
+    border: none;
+    color: black;
+    font-weight: 600;
+    font-size: 1rem; /* Coincide con el tamaño del texto de los enlaces */
+    padding: 0.5rem 1rem; /* Ajuste de tamaño */
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(191, 215, 48, 0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(191, 215, 48, 0.5);
+    background: linear-gradient(45deg, var(--green-uts), var(--green-uts-dark));
+}
+
+/* Carrusel mejorado */
+/* Estilos generales del carrusel */
+.carousel-item {
+    height: 100vh; /* Altura completa del viewport */
+    background-size: cover; /* Cubrir el contenedor */
+    background-position: center; /* Centra la imagen */
+}
+
+/* Fondos específicos para cada imagen del carrusel */
+.carousel-item.img1 {
+    background-image: url('img/pexels-annpoan-5799379.jpg');
+}
+
+.carousel-item.img2 {
+    background-image: url('img/pexels-eberhardgross-1612351.jpg');
+}
+
+.carousel-item.img3 {
+    background-image: url('img/pexels-ekrulila-3837464.jpg');
+}
+
+
+.carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
+    z-index: 1;
+}
+
+.carousel-caption {
+    text-shadow: 1px 1px 2px black; /* Contraste adicional */
+    position: absolute; /* Asegura que el texto esté posicionado sobre la imagen */
+    bottom: 20px; /* Alineación desde el fondo */
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Ajusta el centrado */
+    text-align: center; /* Alinea el texto en el centro */
+    color: #f0f0f0;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejorar la legibilidad */
+    padding: 20px; /* Espaciado alrededor del texto */
+    border-radius: 10px; /* Esquinas redondeadas */
+}
+
+
+.carousel-caption h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-shadow: var(--text-shadow);
+    animation: fadeInDown 1s ease-out;
+    background: linear-gradient(45deg, #fff, var(--green-uts));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: gradient 3s linear infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Responsive - Ajuste de color en pantallas pequeñas */
+@media (max-width: 768px) {
+    :root {
+        --green-uts: #fff;
+        --green-uts-dark: #fafafa;
+    }
+}
+
+.carousel-caption p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
+/* Estilos para el Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 3rem 0;
+}
+
+.footer h5 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.footer .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer .col-md-4 {
+    margin-bottom: 1.5rem;
+}
+
+.footer a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+
+/* Flechas de navegación mejoradas */
+.carousel-control-prev, .carousel-control-next {
+    width: 15%;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    background-size: 60%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    transform: scale(1.1);
+    border-color: var(--green-uts);
+    background-color: rgba(191, 215, 48, 0.2);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(191, 215, 48, 0.5);
+}
+
+.footer p {
+    margin: -15px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.como-funciona {
+    background-color: rgba(0,0,0,0.8);
+    padding: 4rem 0;
+    color: white;
+}
+
+.paso-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.paso-card:hover {
+    transform: scale(1.05);
+}
+
+.reseñas {
+    background-color: rgba(0,0,0,0.9);
+    padding: 4rem 0;
+}
+
+.tarjeta-reseña {
+    background: var(--green-uts-dark); /* Fondo oscuro */
+    border-radius: 15px;
+    padding: 2rem;
+    color: var(--gray-uts); /* Texto claro */
+    margin-bottom: 2rem;
+}
+
+/* Ajuste para las imágenes de los clientes */
+.cliente-imagen {
+    width: 150px; /* Tamaño deseado de la burbuja */
+    height: 150px; /* Mantener proporción cuadrada */
+    object-fit: cover; /* Recorta la imagen para que siempre llene el contenedor */
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    border: 3px solid var(--gray-uts); /* Opcional: borde decorativo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombras para destacar */
+    transition: transform 0.3s ease; /* Animación suave en hover */
+}
+
+/* Efecto al pasar el mouse */
+.cliente-imagen:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+
+.planes {
+    background-color: rgba(0,0,0,0.8);
+    padding: 4rem 0;
+}
+
+.card-plan {
+    background-color: #2c2c2c; /* Fondo oscuro */
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #ffffff; /* Texto blanco */
+    transition: all 0.3s ease;
+}
+
+.card-plan:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(191, 215, 48, 0.3);
+}
+
+.como-funciona, .planes, .reseñas {
+    position: relative;
+    z-index: 1; /* Asegúrate de que tenga un índice superior */
+}
+
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.modal-header {
+    background-color: #4CAF50;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+
+/* Responsivo - Asegura legibilidad */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    .carousel-caption h2 {
+        font-size: 2rem;
+    }
+    .carousel-caption p {
+        font-size: 1.2rem;
+    }
+}

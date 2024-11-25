@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Clean Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="Style.css">
+
+    <style>
+        .navbar-nav .nav-item {
+            margin-left: 15px; /* Espacio entre los enlaces */
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease-in-out; /* Transición para el efecto hover */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f8f9fa; /* Cambio de color en hover */
+            transform: scale(1.1); /* Escala en hover */
+        }
+
+        #logoutBtn {
+            display: none; /* Por defecto no mostrar el logout */
+        }
+
+        /* Asegurar que los elementos estén alineados a la derecha */
+        .navbar-nav.ms-auto {
+            margin-left: auto; /* Empuja los elementos hacia la derecha */
+        }
+
+        /* Ajuste en la visibilidad de los botones según estado de login */
+        #loginBtn,
+        #registerBtn,
+        #logoutBtn {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="main-container">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Clean Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Enlace "Acerca de" -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="Us.html">Acerca de</a>
+                        </li>
+    
+                        <!-- Enlace "Gestión de Suscripción" -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="Plandepago.html">Gestión de Suscripción</a>
+                        </li>
+    
+                        <!-- Si no está logueado, mostrar estos botones -->
+                        <li id="loginBtn" class="nav-item">
+                            <a class="nav-link" href="login.html">Iniciar Sesión</a>
+                        </li>
+                        <li id="registerBtn" class="nav-item">
+                            <a class="nav-link" href="registro.html">Registrarse</a>
+                        </li>
+    
+                        <!-- Si está logueado, mostrar el botón de Cerrar sesión -->
+                        <li id="logoutBtn" class="nav-item">
+                            <a class="nav-link" href="#" id="logoutLink">Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenido Principal -->
+    <div class="container mt-5">
+        <h1 id="welcomeMessage" class="text-center"></h1>
+    </div>
+
+        <!-- Carrusel -->
+        <div id="backgroundCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="20000">
+            <div class="carousel-inner">
+                <div class="carousel-item active img1">
+                    <div class="carousel-caption text-focus-in">
+                        <h2><b>TIEMPO</b></h2>
+                        <p>Con nuestro "kit de limpieza" podrás optimizar el proceso de mantenimiento de tu hogar o
+                            espacio de trabajo, garantizando una limpieza profunda y eficaz en menos tiempo. Con
+                            productos especializados y herramientas de alta calidad, conseguirás eliminar la suciedad,
+                            el polvo y las manchas de forma rápida y sencilla, logrando un ambiente más saludable y
+                            agradable para ti y los tuyos. </p>
+                    </div>
+                </div>
+                <div class="carousel-item img2">
+                    <div class="carousel-caption text-focus-in">
+                        <h2><b>CONFORT</b></h2>
+                        <p>Con nuestros productos, experimentarás una seguridad y confort que te brindan tranquilidad en
+                            tu día a día. Cada artículo está diseñado pensando en tu bienestar, garantizando un uso
+                            seguro y cómodo, para que puedas disfrutar de la máxima protección sin sacrificar la
+                            comodidad. Desde la facilidad de uso hasta la fiabilidad de cada componente, te ofrecemos
+                            soluciones que te permiten sentirte seguro y cómodo en todo momento.</p>
+                    </div>
+                </div>
+                <div class="carousel-item img3">
+                    <div class="carousel-caption text-focus-in">
+                        <h2><b>EFICIENCIA</b></h2>
+                        <p>Nuestros productos están diseñados para ofrecerte resultados rápidos y duraderos con el
+                            mínimo esfuerzo. Gracias a su tecnología avanzada y diseño optimizado, lograrás cumplir con
+                            tus tareas de manera más eficaz, ahorrando tiempo y energía sin comprometer la calidad. Con
+                            nuestra propuesta, cada acción cuenta, y cada esfuerzo se ve reflejado en resultados
+                            excepcionales.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Botones de navegación del carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#backgroundCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#backgroundCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <section class="como-funciona text-center">
+            <div class="container">
+                <h2 class="mb-5" style="color: var(--green-uts);">Cómo Funciona</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="paso-card">
+                            <h3>1. Elige tu Plan</h3>
+                            <p>Selecciona el plan de suscripción que mejor se adapte a tus necesidades de limpieza.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="paso-card">
+                            <h3>2. Personaliza</h3>
+                            <p>Adapta tu kit de limpieza con productos específicos para tu hogar.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="paso-card">
+                            <h3>3. Recibe en Casa</h3>
+                            <p>Recibe mensualmente tus productos de limpieza directamente en tu domicilio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Planes -->
+<section class="planes text-center">
+    <div class="container">
+        <h2 class="mb-5" style="color: var(--green-uts);">Nuestros Planes</h2>
+        <div class="row">
+            <!-- Plan Básico -->
+            <div class="col-md-4">
+                <div class="card card-plan">
+                    <div class="card-body">
+                        <h3>Básico</h3>
+                        <p class="h4">$29.99/mes</p>
+                        <ul class="list-unstyled mt-3">
+                            <li>Kit básico de limpieza</li>
+                            <li>4 productos esenciales</li>
+                            <li>Envío estándar</li>
+                        </ul>
+                        <a href="#" class="btn btn-glow mt-3" data-bs-toggle="modal" data-bs-target="#suscribirseModalBásico">Suscríbete</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Plan Intermedio -->
+            <div class="col-md-4">
+                <div class="card card-plan">
+                    <div class="card-body">
+                        <h3>Intermedio</h3>
+                        <p class="h4">$49.99/mes</p>
+                        <ul class="list-unstyled mt-3">
+                            <li>Kit completo de limpieza</li>
+                            <li>7 productos premium</li>
+                            <li>Envío rápido</li>
+                        </ul>
+                        <a href="#" class="btn btn-glow mt-3" data-bs-toggle="modal" data-bs-target="#suscribirseModalIntermedio">Suscríbete</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Plan Premium -->
+            <div class="col-md-4">
+                <div class="card card-plan">
+                    <div class="card-body">
+                        <h3>Premium</h3>
+                        <p class="h4">$79.99/mes</p>
+                        <ul class="list-unstyled mt-3">
+                            <li>Kit de lujo</li>
+                            <li>10+ productos especializados</li>
+                            <li>Envío express</li>
+                        </ul>
+                        <a href="#" class="btn btn-glow mt-3" data-bs-toggle="modal" data-bs-target="#suscribirseModalPremium">Suscríbete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal de Suscripción para el Plan Básico -->
+<div class="modal fade" id="suscribirseModalBásico" tabindex="-1" aria-labelledby="suscribirseModalBásicoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="suscribirseModalBásicoLabel">Suscríbete al Plan Básico</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form-suscripcion-básico">
+                    <div class="mb-3">
+                        <label for="emailBásico" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="emailBásico" required placeholder="Escribe tu correo">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Suscribirme</button>
+                </form>
+                <div id="mensaje-exito-básico" class="mt-3 text-success" style="display: none;">
+                    ¡Te has suscrito al plan Básico!
+                </div>
+                <div id="mensaje-error-básico" class="mt-3 text-danger" style="display: none;">
+                    Hubo un problema, intenta nuevamente.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Suscripción para el Plan Intermedio -->
+<div class="modal fade" id="suscribirseModalIntermedio" tabindex="-1" aria-labelledby="suscribirseModalIntermedioLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="suscribirseModalIntermedioLabel">Suscríbete al Plan Intermedio</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form-suscripcion-intermedio">
+                    <div class="mb-3">
+                        <label for="emailIntermedio" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="emailIntermedio" required placeholder="Escribe tu correo">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Suscribirme</button>
+                </form>
+                <div id="mensaje-exito-intermedio" class="mt-3 text-success" style="display: none;">
+                    ¡Te has suscrito al plan Intermedio!
+                </div>
+                <div id="mensaje-error-intermedio" class="mt-3 text-danger" style="display: none;">
+                    Hubo un problema, intenta nuevamente.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Suscripción para el Plan Premium -->
+<div class="modal fade" id="suscribirseModalPremium" tabindex="-1" aria-labelledby="suscribirseModalPremiumLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="suscribirseModalPremiumLabel">Suscríbete al Plan Premium</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form-suscripcion-premium">
+                    <div class="mb-3">
+                        <label for="emailPremium" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="emailPremium" required placeholder="Escribe tu correo">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Suscribirme</button>
+                </form>
+                <div id="mensaje-exito-premium" class="mt-3 text-success" style="display: none;">
+                    ¡Te has suscrito al plan Premium!
+                </div>
+                <div id="mensaje-error-premium" class="mt-3 text-danger" style="display: none;">
+                    Hubo un problema, intenta nuevamente.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <section class="juego-scratch text-center py-5">
+            <div class="container">
+                <h2 class="mb-5" style="color: var(--green-uts);">¡Diviértete mientras aprendes matematicas y conoces
+                    productos de limpieza!</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="ratio ratio-4x3">
+                            <iframe src="https://scratch.mit.edu/projects/1101527995/embed" allowtransparency="true"
+                                width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                            </iframe>
+                        </div>
+                        <p class="mt-3" style="color: var(--green-uts);">¡Juega y aprende sobre la importancia de
+                            mantener tu hogar limpio!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reseñas text-center">
+            <div class="container">
+                <h2 class="mb-5" style="color: var(--green-uts);">Lo Que Dicen Nuestros Clientes</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="tarjeta-reseña">
+                            <img src="img/Envradestok1.jpg" alt="stock1" class="cliente-imagen">
+                            <p>"¡Increíble servicio! Mis productos llegan puntuales y son de excelente calidad."</p>
+                            <h4>María González</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="tarjeta-reseña">
+                            <img src="img/onvreN---.jpg" alt="stock2" class="cliente-imagen">
+                            <p>"Nunca había sido tan fácil mantener mi hogar limpio. Altamente recomendado."</p>
+                            <h4>- Carlos Rodríguez</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="tarjeta-reseña">
+                            <img src="img/viejopanzonstock.jpg" alt="stock3" class="cliente-imagen">
+                            <p>"La personalización es genial. Puedo elegir exactamente lo que necesito."</p>
+                            <h4>- Lautaro Martínez</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // Lógica para procesar la suscripción
+            function procesarSuscripcion(plan) {
+                const email = document.getElementById(`email${plan}`).value;
+                const exito = document.getElementById(`mensaje-exito-${plan}`);
+                const error = document.getElementById(`mensaje-error-${plan}`);
+        
+                // Si hay correo y es válido
+                if (email && email.includes('@')) {
+                    exito.style.display = 'block';
+                    error.style.display = 'none';
+                } else {
+                    exito.style.display = 'none';
+                    error.style.display = 'block';
+                }
+            }
+        
+            // Para el formulario Básico
+            document.getElementById('form-suscripcion-básico').addEventListener('submit', function (e) {
+                e.preventDefault();
+                procesarSuscripcion('Básico');
+            });
+        
+            // Para el formulario Intermedio
+            document.getElementById('form-suscripcion-intermedio').addEventListener('submit', function (e) {
+                e.preventDefault();
+                procesarSuscripcion('Intermedio');
+            });
+        
+            // Para el formulario Premium
+            document.getElementById('form-suscripcion-premium').addEventListener('submit', function (e) {
+                e.preventDefault();
+                procesarSuscripcion('Premium');
+            });
+            
+        </script>
+        
+        
+    
+        <script>
+            // Obtener usuario autenticado
+            const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    
+            // Elementos de la página
+            const loginBtn = document.getElementById('loginBtn');
+            const registerBtn = document.getElementById('registerBtn');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const logoutLink = document.getElementById('logoutLink');
+    
+            if (loggedInUser) {
+                // Si el usuario está logueado, ocultar los botones de login/registro y mostrar el de logout
+                loginBtn.style.display = 'none';
+                registerBtn.style.display = 'none';
+                logoutBtn.style.display = 'block';
+            } else {
+                // Si no hay usuario logueado, mostrar los botones de login/registro
+                loginBtn.style.display = 'block';
+                registerBtn.style.display = 'block';
+                logoutBtn.style.display = 'none';
+            }
+    
+            // Cerrar sesión
+            logoutLink.addEventListener('click', function () {
+                localStorage.removeItem('loggedInUser');
+                window.location.href = "index.html"; // Redirigir al inicio después de cerrar sesión
+            });
+        </script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+        <!-- Footer -->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <h5>CleanHome</h5>
+                        <p>Tu solución integral para la limpieza del hogar</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5>Contacto</h5>
+                        <p>Email: info@cleanhome.com<br>Tel: (123) 456-7890</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5>Enlaces Rápidos</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">Términos y Condiciones</a></li>
+                            <li><a href="#" class="text-white">Política de Privacidad</a></li>
+                            <li><a href="#" class="text-white">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+
+        <!-- Modal de Inicio de Sesión -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Inicio de Sesión</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Usuario</label>
+                                <input type="text" class="form-control" id="username" placeholder="Ingresa tu usuario" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Registro -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Registro de Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="mb-3">
+                        <label for="registerUsername" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="registerUsername" placeholder="Ingresa tu usuario" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerName" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="registerName" placeholder="Ingresa tu nombre completo" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerPassword" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="registerPassword" placeholder="Ingresa tu contraseña" required>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success">Registrarse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Almacén temporal para usuarios
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Manejar Registro
+    document.getElementById('registerForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Obtener valores del formulario de registro
+        const username = document.getElementById('registerUsername').value;
+        const name = document.getElementById('registerName').value;
+        const password = document.getElementById('registerPassword').value;
+
+        // Verificar si el usuario ya existe
+        if (users.some(user => user.username === username)) {
+            alert('El usuario ya existe. Por favor, elige otro.');
+            return;
+        }
+
+        // Registrar usuario
+        users.push({ username, name, password });
+        localStorage.setItem('users', JSON.stringify(users)); // Guardar en localStorage
+        alert('¡Registro exitoso! Ahora puedes iniciar sesión.');
+
+        // Cerrar el modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+        modal.hide();
+    });
+
+    // Manejar Inicio de Sesión
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Obtener valores del formulario de inicio de sesión
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Buscar usuario
+        const user = users.find(user => user.username === username && user.password === password);
+
+        if (user) {
+            // Mostrar saludo
+            const userGreeting = document.getElementById('userGreeting');
+            userGreeting.innerHTML = `👋 Bienvenido, <strong>${user.name}</strong>!`;
+
+            // Cerrar el modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+            modal.hide();
+        } else {
+            alert('Usuario o contraseña incorrectos.');
+        }
+    });
+</script>
+
+
+
+
+</body>
+
+
+</html>

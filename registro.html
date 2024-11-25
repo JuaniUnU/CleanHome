@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Registro | Clean Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body style="background-color: var(--green-uts); color: var(--green-uts-dark);">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card shadow-lg p-4 rounded" style="max-width: 400px; background-color: var(--gray-uts);">
+            <h2 class="text-center mb-4" style="color: var(--green-uts-dark);">Crear una Cuenta</h2>
+            <form id="registerForm">
+                <div class="mb-3">
+                    <label for="registerUsername" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" id="registerUsername" placeholder="Ingresa tu usuario" required>
+                </div>
+                <div class="mb-3">
+                    <label for="registerName" class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" id="registerName" placeholder="Ingresa tu nombre completo" required>
+                </div>
+                <div class="mb-3">
+                    <label for="registerPassword" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="registerPassword" placeholder="Crea una contraseña" required>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn" style="background-color: var(--hover-color); color: white;">Registrarse</button>
+                </div>
+            </form>
+            <a href="index.html">
+                <button type="button" class="btn" style="background-color: var(--hover-color); color: white; padding: 10px 20px; margin-top: 15px;">
+                    Volver al Inicio
+                </button>
+            </a>          
+            <p class="text-center mt-3">¿Ya tienes una cuenta? <a href="login.html" style="color: var(--hover-color); text-decoration: none;">Inicia Sesión</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Almacén temporal para usuarios
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+
+        // Manejar Registro
+        document.getElementById('registerForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Obtener valores del formulario de registro
+            const username = document.getElementById('registerUsername').value;
+            const name = document.getElementById('registerName').value;
+            const password = document.getElementById('registerPassword').value;
+
+            // Verificar si el usuario ya existe
+            if (users.some(user => user.username === username)) {
+                alert('El usuario ya existe. Por favor, elige otro.');
+                return;
+            }
+
+            // Registrar usuario
+            users.push({ username, name, password });
+            localStorage.setItem('users', JSON.stringify(users)); // Guardar en localStorage
+            alert('¡Registro exitoso! Ahora puedes iniciar sesión.');
+
+            // Redirigir al inicio de sesión
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+
+</html>

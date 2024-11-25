@@ -1,0 +1,298 @@
+/* Variables globales */
+:root {
+    --green-uts: #f5e3d3;
+    --green-uts-dark: #f2d0c4;
+    --gray-uts: rgba(255, 255, 255, 0.8);
+    --hover-color: rgba(117, 91, 52, 0.8);
+    --text-shadow: 1px 1px 2px #a68a6d;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--green-uts), var(--green-uts-dark));
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(to right, var(--green-uts-dark), var(--hover-color));
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: white;
+    font-weight: 600;
+    text-shadow: var(--text-shadow);
+}
+
+.nav-link {
+    color: var(--gray-uts) !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+.btn-glow {
+    background: var(--hover-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(117, 91, 52, 0.3);
+}
+
+.btn-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(117, 91, 52, 0.5);
+    color: white;
+}
+
+/* Carrusel */
+.carousel {
+    height: 80vh;
+    overflow: hidden;
+}
+
+.carousel-item {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text-focus-in {
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+/* Sección Cómo Funciona */
+.como-funciona {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.paso-card {
+    background: var(--green-uts);
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.paso-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Sección Planes */
+.planes {
+    padding: 5rem 0;
+    background-color: var(--gray-uts);
+}
+
+.card-plan {
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-plan:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-plan .card-body {
+    padding: 2rem;
+}
+
+.card-plan h3 {
+    color: var(--hover-color);
+    font-weight: bold;
+}
+
+/* Sección Reseñas */
+.reseñas {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.tarjeta-reseña {
+    background: var(--green-uts);
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(to right, var(--green-uts-dark), var(--hover-color));
+    color: white;
+    text-shadow: var(--text-shadow);
+}
+
+/* Estilos adicionales para la página de planes */
+.hero-section {
+    background-color: var(--green-uts);
+    padding: 4rem 0;
+}
+
+.hero-section h1 {
+    color: var(--hover-color);
+    text-shadow: var(--text-shadow);
+}
+
+.card-plan {
+    position: relative;
+    padding: 2rem;
+}
+
+.card-plan.destacado {
+    transform: scale(1.05);
+    border: 2px solid var(--hover-color);
+}
+
+.badge-destacado {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--hover-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.precio {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.precio .monto {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--hover-color);
+}
+
+.precio .periodo {
+    font-size: 1rem;
+    color: #666;
+}
+
+.lista-beneficios {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.lista-beneficios li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.lista-beneficios li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--hover-color);
+}
+
+.producto-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-10px);
+}
+
+.lista-productos {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-productos li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.beneficio-card {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.beneficio-card .icono {
+    font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .card-plan.destacado {
+        transform: scale(1);
+        margin: 2rem 0;
+    }
+    
+    .hero-section {
+        padding: 2rem 0;
+    }
+}
+
+/* Animaciones */
+@keyframes text-focus-in {
+    0% {
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 60vh;
+    }
+    
+    .carousel-caption {
+        padding: 1rem;
+        max-width: 90%;
+    }
+    
+    .paso-card, .card-plan, .tarjeta-reseña {
+        margin-bottom: 2rem;
+    }
+}

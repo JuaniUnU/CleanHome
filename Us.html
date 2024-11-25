@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Clean Home - Productos de Limpieza Ecológicos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #f5e3d3; /* Changed to green-uts */
+            --accent-color: #f2d0c4; /* Changed to green-uts-dark */
+            --text-color: #261502; /* Modified to match the new theme */
+            --light-bg: rgba(255, 255, 255, 0.8); /* Changed to gray-uts */
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-color);
+        }
+
+        .navbar {
+            background-color: transparent;
+            transition: all 0.3s ease;
+            padding: 1.5rem 0;
+        }
+
+        .navbar.scrolled {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(166, 138, 109, 0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+            text-shadow: var(--text-shadow);
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            font-weight: 500;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+            text-shadow: var(--text-shadow);
+        }
+
+        .nav-link:hover {
+            color: var(--hover-color);
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(108, 68, 33, 0.8), rgba(222, 134, 101, 0.8)),
+                        url('/api/placeholder/1920/1080') center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .hero-content h1 {
+            text-shadow: var(--text-shadow);
+        }
+
+        .product-card {
+            background: var(--light-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(166, 138, 109, 0.1);
+        }
+
+        .product-image {
+            height: 250px;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .benefits-section {
+            background-color: var(--primary-color);
+            padding: 5rem 0;
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            border: none;
+            padding: 0.75rem 2rem;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+            color: var(--text-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background-color: var(--hover-color);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .navbar {
+                background-color: var(--primary-color);
+                padding: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-leaf me-2"></i>Clean Home
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#beneficios">Beneficios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Plandepago.html">Planes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white" href="login.html">Comenzar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Limpieza Ecológica para tu Hogar</h1>
+                <p>Productos naturales y biodegradables entregados mensualmente en tu puerta. Cuida tu hogar y el planeta con nuestra línea de productos premium.</p>
+                <a href="#productos" class="btn btn-primary btn-lg">Descubre Nuestros Productos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="productos" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Nuestros Productos</h2>
+            <div class="row g-4">
+                <!-- Product 1 -->
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="/api/placeholder/400/250" alt="Limpiador Multiusos" class="img-fluid">
+                        </div>
+                        <div class="product-content">
+                            <h3>Limpiador Multiusos</h3>
+                            <p>Fórmula natural concentrada para todo tipo de superficies</p>
+                            <div class="price">$24.99</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="/api/placeholder/400/250" alt="Detergente Ecológico" class="img-fluid">
+                        </div>
+                        <div class="product-content">
+                            <h3>Detergente Ecológico</h3>
+                            <p>Suave con tu ropa, amigable con el medio ambiente</p>
+                            <div class="price">$29.99</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="/api/placeholder/400/250" alt="Kit de Limpieza" class="img-fluid">
+                        </div>
+                        <div class="product-content">
+                            <h3>Kit de Limpieza Completo</h3>
+                            <p>Todo lo necesario para mantener tu hogar impecable</p>
+                            <div class="price">$79.99</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="benefits-section">
+        <div class="container">
+            <h2 class="text-center mb-5">¿Por qué elegirnos?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <i class="fas fa-leaf benefit-icon"></i>
+                        <h3>100% Ecológico</h3>
+                        <p>Productos biodegradables que cuidan el medio ambiente</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <i class="fas fa-truck benefit-icon"></i>
+                        <h3>Entrega Mensual</h3>
+                        <p>Recibe tus productos directamente en tu puerta</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <i class="fas fa-heart benefit-icon"></i>
+                        <h3>Satisfacción Garantizada</h3>
+                        <p>30 días de garantía en todos nuestros productos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').classList.add('scrolled');
+            } else {
+                document.querySelector('.navbar').classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
