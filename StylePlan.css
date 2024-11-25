@@ -22,27 +22,93 @@ body {
     min-height: 100vh;
 }
 
-/* Navbar */
+/* Estilos personalizados para el navbar */
 .navbar {
-    background: linear-gradient(to right, var(--green-uts-dark), var(--hover-color));
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     padding: 1rem 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-brand {
-    color: white;
-    font-weight: 600;
-    text-shadow: var(--text-shadow);
-}
-
-.nav-link {
-    color: var(--gray-uts) !important;
     transition: all 0.3s ease;
 }
 
-.nav-link:hover {
+/* Estilo para el logo/marca */
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: rgba(117, 91, 52, 0.8);
+}
+
+/* Estilos para los items del nav */
+.navbar-nav .nav-link {
+    color: #2c3e50;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    margin: 0 0.2rem;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f2d0c4;
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* Estilo especial para el botón de login/logout */
+.btn-nav-primary {
+    background-color: #755b34;
     color: white !important;
+    padding: 0.5rem 1.5rem !important;
+    border-radius: 25px !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-nav-primary:hover {
+    background-color: #f2d0c4 !important;
     transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Estilos para el toggler en móvil */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(44, 62, 80, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        padding: 1rem 0;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.7rem 1rem;
+        margin: 0.2rem 0;
+    }
+    
+    .btn-nav-primary {
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+}
+
+/* Efecto de scroll */
+.navbar.scrolled {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 0.8rem 2rem;
 }
 
 .btn-glow {
@@ -85,10 +151,33 @@ body {
     animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
+
+
 /* Sección Cómo Funciona */
 .como-funciona {
     padding: 5rem 0;
     background-color: white;
+}
+
+.welcome-bar {
+    background-color: rgba(117, 91, 52, 0.1);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(117, 91, 52, 0.1);
+}
+
+.welcome-text {
+    color: #755b34;
+    font-weight: 500;
+}
+
+.plan-info {
+    color: #755b34;
+    opacity: 0.9;
+}
+
+.plan-info strong {
+    color: #755b34;
+    font-weight: 600;
 }
 
 .paso-card {
@@ -230,6 +319,30 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
+
+.producto-card img {
+    width: 100%;          /* Hace que la imagen ocupe todo el ancho del contenedor */
+    height: 200px;        /* Define una altura fija para las imágenes */
+    object-fit: cover;    /* Hace que la imagen cubra el contenedor sin salirse del margen */
+    border-radius: 8px;   /* Opcional: si quieres bordes redondeados en las imágenes */
+}
+
+/* Si quieres una altura máxima uniforme */
+.producto-card {
+    height: 100%;         /* Asegura que el contenedor del producto se ajuste al tamaño del contenido */
+}
+
+/* Ajustes de los contenedores de los productos */
+.producto-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd; /* Bordes opcionales */
+    border-radius: 8px;     /* Bordes redondeados */
+    overflow: hidden;       /* Oculta cualquier contenido que sobresalga */
+}
+
 
 .producto-card:hover {
     transform: translateY(-10px);
