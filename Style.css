@@ -19,7 +19,11 @@ body {
     display: flex;
     flex-direction: column;
     overflow: auto; /* Cambiado a auto */
-    background-color: #000;
+    background-color: #4c3620;
+}
+
+.text-center{
+    color: antiquewhite;
 }
 
 
